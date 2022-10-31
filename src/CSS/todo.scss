@@ -1,0 +1,23 @@
+.todo-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+    border: 2px solid #ccc;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    .todo-title{
+        flex: 1;
+        margin: 0 5px;
+    }
+    .check-box{
+        color: #f85904;
+        cursor: pointer;
+    }
+    .trash-basket{
+        margin-left: 5px;
+        color: #f85904;
+        cursor: pointer;
+    }
+}

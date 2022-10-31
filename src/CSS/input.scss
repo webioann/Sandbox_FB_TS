@@ -1,0 +1,11 @@
+.input-form{
+    padding: 5px;
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #ccc;
+    button{
+        padding: 5px;
+        border-radius: 5px;
+    }
+}

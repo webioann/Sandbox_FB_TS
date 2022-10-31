@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useGetToDoCollection } from '../hooks/useGetToDoCollection';
 import ToDoItem from './ToDoItem';
 import Input from './Input';
-import './app.scss'
+import '../CSS/app.scss'
 interface IToDo {
     id?: string
     title: string
@@ -17,7 +17,7 @@ function App() {
     return (
         <div className='container'>
             <Input/>
-            <ul>
+            <ul className='todos-list'>
                 { todos.map(todo => (
                     <ToDoItem todo={todo} key={todo.id}/>
                 ))}

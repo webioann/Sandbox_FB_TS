@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import '../CSS/input.scss'
 
 const Input = () => {
 
@@ -9,14 +10,14 @@ const Input = () => {
     }
 
     return (
-        <div>
+        <form className='input-form'>
             <input 
                 type='text' 
                 value={value}
                 placeholder='create ToDo'
                 onChange={inputHandler}/>
             <button>Create ToDo </button>
-        </div>
+        </form>
     )
 }
 
