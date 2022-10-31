@@ -4,7 +4,6 @@ import ToDoItem from './ToDoItem';
 import Input from './Input';
 import '../CSS/app.scss'
 
-
 function App() {
 
     const todos = useGetToDoCollection()

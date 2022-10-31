@@ -11,6 +11,10 @@
         flex: 1;
         margin: 0 5px;
     }
+    .complited{
+        text-decoration: line-through;
+        opacity: 0.5;
+    }
     .check-box{
         color: #f85904;
         cursor: pointer;

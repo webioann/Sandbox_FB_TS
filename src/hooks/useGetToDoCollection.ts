@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { collection, getDocs, doc } from "firebase/firestore"; 
+import { collection, getDocs } from "firebase/firestore"; 
 import { db } from "../firebase-config";
 
 interface IToDo {
@@ -27,7 +27,7 @@ export const useGetToDoCollection = () => {
             setTodos(raw);
         }
         getTodosCollection()
-    }, [])
+    })
 
     return todos
 };
