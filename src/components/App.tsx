@@ -1,46 +1,28 @@
 import React, { useState, useEffect } from 'react'
-import { collection, getDocs, doc } from "firebase/firestore"; 
-import { db } from "../firebase-config";
+import { useGetToDoCollection } from '../hooks/useGetToDoCollection';
+import ToDoItem from './ToDoItem';
+import Input from './Input';
 import './app.scss'
-
-interface IUser {
-    name: string
-    age: number
+interface IToDo {
     id?: string
+    title: string
+    complited: boolean
+    timestamp: string
 }
 
 function App() {
-    const usersCollection = collection(db, "users")
-    const[users, setUsers] = useState<IUser[] | []>([])
 
-    useEffect(() => {
-        const getUsers = async () => {
-            const data = await getDocs(usersCollection);
-            const raw: Array<any> = [];
-            data.docs.map((document) => {
-                raw.push({
-                    id: document.id, // because id field in separate function in firestore
-                    ...document.data(), // the remaining fields
-                });
-            });
-            setUsers(raw);
-        }
-        getUsers()
-    }, [])
-
-    // console.log(`USERS = ${JSON.stringify(users)}`)
+    const todos = useGetToDoCollection()
 
     return (
         <div className='container'>
-            { users.map((user) => (
-                <div key={user.id} className='user'>
-                    <h1>{user.name}</h1>
-                    <h1>{user.age}</h1>
-                </div>
-            )) }
-            CRUD
+            <Input/>
+            <ul>
+                { todos.map(todo => (
+                    <ToDoItem todo={todo} key={todo.id}/>
+                ))}
+            </ul>
         </div>
     )
-
 }
 export default App;
