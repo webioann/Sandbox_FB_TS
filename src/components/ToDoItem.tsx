@@ -7,7 +7,7 @@ interface IPropsObject {
     todo: { 
         title: string
         complited: boolean
-        timestamp: string
+        timestamp: number
     };
 }
 

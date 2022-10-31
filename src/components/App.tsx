@@ -3,12 +3,7 @@ import { useGetToDoCollection } from '../hooks/useGetToDoCollection';
 import ToDoItem from './ToDoItem';
 import Input from './Input';
 import '../CSS/app.scss'
-interface IToDo {
-    id?: string
-    title: string
-    complited: boolean
-    timestamp: string
-}
+
 
 function App() {
 

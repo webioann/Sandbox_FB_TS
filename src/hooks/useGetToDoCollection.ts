@@ -6,7 +6,7 @@ interface IToDo {
     id: string
     title: string
     complited: boolean
-    timestamp: string
+    timestamp: number
 }
 
 export const useGetToDoCollection = () => {
