@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { IoTrashOutline } from 'react-icons/io5';
 import { GrCheckboxSelected, GrCheckbox } from 'react-icons/gr';
 import { collection, deleteDoc, updateDoc, doc } from "firebase/firestore"; 
 import { db } from "../firebase-config";
+import { useTimestampConverter } from '../hooks/useTimestampConverter';
 import '../CSS/todo.scss'
 interface IToDo {
     id: string
@@ -16,6 +17,8 @@ interface IPropsObject {
 }
 
 const ToDoItem: React.FC<IPropsObject> = ({ todo }) => {
+
+    const time = useTimestampConverter(todo.timestamp)
 
     const deleteTodo = async (id: string) => {
         const removedDoc = doc(db, "todos", id);
@@ -39,7 +42,7 @@ const ToDoItem: React.FC<IPropsObject> = ({ todo }) => {
                     onClick={() => {updateTodo(todo.id, todo.complited)}}/> 
             }
             <h4 className={todo.complited ? 'todo-title complited' : 'todo-title'}>{todo.title}</h4>
-            <p>{todo.timestamp}</p>
+            <p>{time}</p>
             <IoTrashOutline 
                 className='trash-basket'
                 onClick={() => {deleteTodo(todo.id)}}/>

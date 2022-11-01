@@ -25,9 +25,10 @@ export const useGetToDoCollection = () => {
                 });
             });
             setTodos(raw);
+            console.log(`render`);
         }
         getTodosCollection()
-    })
+    }, [])
 
     return todos
 };
