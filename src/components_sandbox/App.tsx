@@ -8,10 +8,10 @@ const App = () => {
     const [endPoint, setEndPoint] = useState(0)
 
     const startSession = () => {
-        setStartPoint(Date.now())
+        setStartPoint(Date.now());
     }
     const finishSession = () => {
-        setEndPoint(Date.now())
+        setEndPoint(Date.now());
     }
     const putTimeStampOnDB = async() => {
         try{
