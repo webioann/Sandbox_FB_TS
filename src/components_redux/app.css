@@ -1,0 +1,11 @@
+.app-container{
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+}
+.counter{
+    width: 640px;
+    margin-top: 200px;
+    padding: 50px;
+    background-color: #aaa;
+}
