@@ -20,7 +20,7 @@ const App = () => {
                     session_data: { a: 'Some data' },
                     tuple: [startPoint, endPoint]
                 })
-                // reset state
+                // reset state for new session
                 setStartPoint(0)
                 setEndPoint(0)
             }
