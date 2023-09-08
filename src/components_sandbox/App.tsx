@@ -4,9 +4,6 @@ import { db } from "../firebase-config";
 
 const App = () => {
 
-    const cityRef = doc(db, 'cities', 'BJ');
-    const [time_stamp_tuple, setTST] = useState<[number,number]>( [0, 0] )
-
     const [startPoint, setStartPoint] = useState(0)
     const [endPoint, setEndPoint] = useState(0)
 
