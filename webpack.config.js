@@ -57,13 +57,13 @@ module.exports = {
             }
             },    
             {
-                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                test: /\.(png|svg|jpg|jpeg|gif|mp3)$/i,
                 type: 'asset/resource',
             },
             {
                 test: /\.(ttf|woff|woff2|eot)$/,
                 type: 'asset/resource',
-            }
+            },
         ]
     }
 }
