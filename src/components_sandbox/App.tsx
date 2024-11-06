@@ -1,42 +1,57 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import DialogModal from './DialogModal'
+import SimpleComponent from './SimpleComponent'
 import './app.css'
 
 function App() {
 
   const [dialogOpenStatus, setDialogOpenStatus] = React.useState<boolean>(false)
-
-  let A = true
-  const dialogRef = React.useRef<HTMLDialogElement>(null)
+  const mochArray= ['apple ', 'banana ', 'orange ', 'carrot ', 'kiwi ', 'onion']
   const openModal = () => {setDialogOpenStatus(true)}
-  const closeModal = () => {setDialogOpenStatus(false)}
+  const [result, setResult] = useState<string | undefined>('')
+  const [sentence, setSentence] = useState<string | undefined>('')
+  localStorage.setItem('ITEM', 'Item from storage')
+
+  const worker = () => {
+    let randomIndex = (Math.floor(Math.random() * 6))
+    setResult(mochArray.at(randomIndex))
+    let raw = localStorage.getItem('ITEM')
+    if(raw) {
+      setSentence(raw)
+    }
+    // sentence.padStart(30)
+  }
 
   return (
     <>
-    <form>
-      <label htmlFor="browser">Выберите Ваш браузер из списка:</label>
-      <input list="browsers" id="browser"/>
+    <h1>Header title</h1>
+    <SimpleComponent/>
+    <h2 className="result">
+      RESULTS : {result}
+    </h2>
+    <h2 className="result">
+      SENTENCE : {sentence}
+    </h2>
 
-      <datalist id="browsers">
-        <option value="Edge"/>
-        <option value="Firefox"/>
-        <option value="Chrome"/>
-        <option value="Opera"/>
-        <option value="Safari"/>
-      </datalist>
-
-    </form>
-    <p>Некоторые люди искренне верили в то, что в <time dateTime="2000-01-01 00:01">полночь 2000 года</time> наступит конец света, но, как видите, свет продолжается. Возможно, он закончится в <time dateTime="3000-01-01 00:01">полночь 3000 года</time>, но это не точно</p><button onClick={openModal}>Open modal</button>
-<DialogModal dialogOpenStatus={dialogOpenStatus} setDialogOpenStatus={setDialogOpenStatus}/>
-
-
+    <br />
+    <button onClick={worker}>
+      work
+    </button>
+    <div className="modal-wrapper">
+      <button onClick={openModal}>Open modal</button>
+      <DialogModal 
+        dialogOpenStatus={dialogOpenStatus} 
+        setDialogOpenStatus={setDialogOpenStatus}
+      />
+    </div>
 
 
 
 
 
-</>
+
+
+  </>
   )
 }
-
 export default App;
