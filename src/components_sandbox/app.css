@@ -1,0 +1,38 @@
+html, body {
+    padding: 1rem;
+}
+.modal-wrapper{
+    display: grid;
+    justify-content: center;
+    box-shadow: 0 0 #0000, 0 0 #0000, 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    padding: 2rem;
+
+}
+.modal {
+    border: none !important;
+    border-radius: 10px;
+    box-shadow: 0 0 #0000, 0 0 #0000, 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    padding: 1.5rem;
+    max-width: 400px;
+    background: linear-gradient(blue, 10%, pink);
+}
+.modal::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(12px);
+}
+.tooltip {
+    border: none !important;
+    border: 1px solid blue;
+    background-color: #ccc;
+    border-radius: 3px;
+    padding: 1rem;
+    max-width: 200px;
+}
+.tooltip::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+}
+
+button{
+    cursor: pointer;
+}

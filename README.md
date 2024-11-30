@@ -1,1 +1,1 @@
-# :star: CRUD ToDo sandbox app
+# :star CRUD ToDo sandbox app
